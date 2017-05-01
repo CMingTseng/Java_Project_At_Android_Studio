@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+version = '1.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = 'idv.neo.java_test.FirstJava'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'TCPServer Examples', 'Implementation-Version': version,
+                'Main-Class': mainClassName
+    }
+}
+
+run {
+    standardInput = System.in
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
